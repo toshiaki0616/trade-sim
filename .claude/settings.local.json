@@ -1,9 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "Bash(git -C /c/work/claude rev-parse --show-toplevel)",
-      "Bash(git -C /c/work/claude log --oneline -5)",
-      "Bash(dir:*)"
-    ]
-  }
-}
