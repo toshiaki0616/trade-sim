@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install:*)",
+      "Bash(npm test:*)",
+      "Bash(npm run build:*)",
+      "Bash(git commit:*)",
+      "WebFetch(domain:developers.annict.com)",
+      "WebFetch(domain:docs.anilist.co)",
+      "WebFetch(domain:docs.cal.syoboi.jp)",
+      "WebFetch(domain:zenn.dev)",
+      "Bash(npm create:*)",
+      "Bash(npx tsc:*)",
+      "Bash(vercel login:*)",
+      "Bash(export PATH=\"$PATH:/c/Program Files/GitHub CLI\")",
+      "Bash(git init:*)",
+      "Bash(git add:*)",
+      "Bash(gh repo create:*)",
+      "Bash(git remote add:*)",
+      "Bash(git push:*)",
+      "Bash(# Check @tsparticles/react API to understand the correct types ls /c/work/claude/anime-sugoi/node_modules/@tsparticles/react/ && cat /c/work/claude/anime-sugoi/node_modules/@tsparticles/react/dist/index.d.ts)"
+    ]
+  }
+}

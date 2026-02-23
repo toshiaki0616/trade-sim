@@ -1,0 +1,223 @@
+import type { Character } from '../types'
+
+export const characters: Character[] = [
+  // ========== はーとぶれいく ==========
+  {
+    id: 'hatori-chihiro',
+    name: '鳩野ちひろ',
+    nameKana: 'はとのちひろ',
+    grade: '1年生',
+    role: 'main',
+    band: 'はーとぶれいく',
+    part: 'ギター・ボーカル',
+    instrument: 'フェンダー テレキャスター（赤）',
+    description:
+      '渋めの邦ロックを愛する高校1年生。自称「陰キャ」だが負けん気が強く努力家。新品のギターを手に軽音部の門を叩く、物語の主人公。',
+    traits: ['邦ロック愛好家', '黒髪ロング', '四白眼', '大阪出身', '負けん気強め'],
+    favoriteBands: ['BUMP OF CHICKEN', 'RADWIMPS', 'ASIAN KUNG-FU GENERATION'],
+    imageUrl: 'https://placehold.co/400x600/FBDB3E/E8201A?text=%E9%B3%A9%E9%87%8E%E3%81%A1%E3%81%B2%E3%82%8D',
+    imagePlaceholderColor: 'from-yellow-300 to-amber-400',
+    scenes: [
+      'https://placehold.co/320x180/FBDB3E/E8201A?text=scene+1',
+      'https://placehold.co/320x180/fde68a/92400e?text=scene+2',
+      'https://placehold.co/320x180/fef3c7/b45309?text=scene+3',
+    ],
+  },
+  {
+    id: 'uchida-momo',
+    name: '内田桃',
+    nameKana: 'うちだもも',
+    grade: '1年生',
+    role: 'sub',
+    band: 'はーとぶれいく',
+    part: 'ドラム',
+    instrument: 'ドラムセット',
+    description:
+      'コミュニケーション力が抜群で、分け隔てなく誰にでも接する明るい1年生。赤みがかった茶髪を三つ編みにしているのが特徴。ちひろの歌声に心打たれ、バンドへの参加を決意する。',
+    traits: ['明るい', '茶髪三つ編み', 'コミュ力高い', '優しい'],
+    favoriteBands: ['SHISHAMO', 'Hump Back'],
+    imageUrl: 'https://placehold.co/400x600/fca5a5/7f1d1d?text=%E5%86%85%E7%94%B0%E6%A1%83',
+    imagePlaceholderColor: 'from-red-200 to-rose-300',
+    scenes: [
+      'https://placehold.co/320x180/fca5a5/7f1d1d?text=scene+1',
+      'https://placehold.co/320x180/fecdd3/881337?text=scene+2',
+      'https://placehold.co/320x180/ffe4e6/9f1239?text=scene+3',
+    ],
+  },
+  {
+    id: 'kouyama-rin',
+    name: '幸山厘',
+    nameKana: 'こうやまりん',
+    grade: '1年生',
+    role: 'sub',
+    band: 'はーとぶれいく',
+    part: 'ベース',
+    instrument: 'フェンダー ジャズベース（サンバースト）',
+    description:
+      'おっとりした外見の裏に抜群の観察力と策士的思考を持つ長身の1年生。「機熟」が口癖で、ちひろの歌声に魅了されバンドを裏から支え続ける。幸山厘と遠野元はいとこ同士。',
+    traits: ['長身', 'ダークショートヘア', 'クール', '策士', '情報収集力抜群'],
+    favoriteBands: ['a flood of circle', 'THE BLUE HEARTS', '銀杏BOYZ'],
+    imageUrl: 'https://placehold.co/400x600/d1fae5/064e3b?text=%E5%B9%B8%E5%B1%B1%E5%8E%98',
+    imagePlaceholderColor: 'from-emerald-200 to-teal-300',
+    scenes: [
+      'https://placehold.co/320x180/d1fae5/064e3b?text=scene+1',
+      'https://placehold.co/320x180/a7f3d0/065f46?text=scene+2',
+      'https://placehold.co/320x180/6ee7b7/047857?text=scene+3',
+    ],
+  },
+  {
+    id: 'fujii-ayame',
+    name: '藤井彩目',
+    nameKana: 'ふじいあやめ',
+    grade: '1年生',
+    role: 'sub',
+    band: 'はーとぶれいく',
+    part: 'ギター',
+    instrument: 'エレキギター',
+    description:
+      'ウルフカットにインナーカラーが印象的な1年生。過去のいじめ体験から強がりになっているが、バンド活動を通じて徐々に素直さを取り戻していく。鷹見項希と破局した過去がある。',
+    traits: ['ウルフカット', 'インナーカラー', '強がり', '実は素直'],
+    favoriteBands: ['キュウソネコカミ', 'あいみょん'],
+    imageUrl: 'https://placehold.co/400x600/e9d5ff/4c1d95?text=%E8%97%A4%E4%BA%95%E5%BD%A9%E7%9B%AE',
+    imagePlaceholderColor: 'from-violet-200 to-purple-300',
+    scenes: [
+      'https://placehold.co/320x180/e9d5ff/4c1d95?text=scene+1',
+      'https://placehold.co/320x180/ddd6fe/5b21b6?text=scene+2',
+      'https://placehold.co/320x180/c4b5fd/6d28d9?text=scene+3',
+    ],
+  },
+
+  // ========== protocol. ==========
+  {
+    id: 'takami-kouki',
+    name: '鷹見項希',
+    nameKana: 'たかみこうき',
+    grade: '1年生',
+    role: 'sub',
+    band: 'protocol.',
+    part: 'ギター・ボーカル',
+    instrument: 'エレキギター',
+    description:
+      'protocol.のフロントマン。端正な顔立ちの1年生で、他人への興味が薄く軋轢を生むこともあるが、音楽への真摯な姿勢は本物。藤井彩目への片思いと破局を経験している。',
+    traits: ['端正な顔立ち', '他人に無関心', '音楽一筋', 'クール'],
+    favoriteBands: ['King Gnu', 'RADWIMPS'],
+    imageUrl: 'https://placehold.co/400x600/bfdbfe/1e3a8a?text=%E9%B7%B9%E8%A6%8B%E9%A0%85%E5%B8%8C',
+    imagePlaceholderColor: 'from-blue-200 to-indigo-300',
+    scenes: [
+      'https://placehold.co/320x180/bfdbfe/1e3a8a?text=scene+1',
+      'https://placehold.co/320x180/93c5fd/1e40af?text=scene+2',
+      'https://placehold.co/320x180/60a5fa/1d4ed8?text=scene+3',
+    ],
+  },
+  {
+    id: 'mizuo-haruichi',
+    name: '水尾春一',
+    nameKana: 'みずおはるいち',
+    grade: '1年生',
+    role: 'sub',
+    band: 'protocol.',
+    part: 'ギター',
+    instrument: 'エレキギター',
+    description:
+      'protocol.のギタリスト。長身で表情の変化が乏しい寡黙な1年生だが、陰ながら努力を重ねる実力派。',
+    traits: ['長身', '寡黙', '努力家', '表情が少ない'],
+    favoriteBands: ['BUMP OF CHICKEN', 'ASIAN KUNG-FU GENERATION'],
+    imageUrl: 'https://placehold.co/400x600/ccfbf1/0f4c3a?text=%E6%B0%B4%E5%B0%BE%E6%98%A5%E4%B8%80',
+    imagePlaceholderColor: 'from-teal-200 to-cyan-300',
+    scenes: [
+      'https://placehold.co/320x180/ccfbf1/0f4c3a?text=scene+1',
+      'https://placehold.co/320x180/99f6e4/0d4c39?text=scene+2',
+      'https://placehold.co/320x180/5eead4/134e4a?text=scene+3',
+    ],
+  },
+  {
+    id: 'taguchi-ryuuya',
+    name: '田口流哉',
+    nameKana: 'たぐちりゅうや',
+    grade: '1年生',
+    role: 'sub',
+    band: 'protocol.',
+    part: 'ベース',
+    instrument: 'エレキベース',
+    description:
+      'protocol.のベーシスト。肩まで届く長髪と三白眼が印象的な1年生。高い演奏技術を持ち、バンドのグルーヴを支える。',
+    traits: ['肩ロング', '三白眼', '高い演奏力', '個性的'],
+    favoriteBands: ['THE BLUE HEARTS', 'a flood of circle'],
+    imageUrl: 'https://placehold.co/400x600/fef3c7/78350f?text=%E7%94%B0%E5%8F%A3%E6%B5%81%E5%93%89',
+    imagePlaceholderColor: 'from-amber-100 to-yellow-200',
+    scenes: [
+      'https://placehold.co/320x180/fef3c7/78350f?text=scene+1',
+      'https://placehold.co/320x180/fde68a/92400e?text=scene+2',
+      'https://placehold.co/320x180/fcd34d/b45309?text=scene+3',
+    ],
+  },
+  {
+    id: 'toono-gen',
+    name: '遠野元',
+    nameKana: 'とおのげん',
+    grade: '1年生',
+    role: 'sub',
+    band: 'protocol.',
+    part: 'ドラム',
+    instrument: 'ドラムセット',
+    description:
+      'protocol.のドラマー。ツーブロックにメガネ、左眉に剃り込みの個性的な外見の1年生。内田桃に片思いしている一途な性格で、演奏技術は高い。幸山厘のいとこ。',
+    traits: ['ツーブロック', 'メガネ', '左眉剃り込み', '一途', '高い演奏力'],
+    favoriteBands: ['King Gnu', 'BUMP OF CHICKEN'],
+    imageUrl: 'https://placehold.co/400x600/e0e7ff/1e1b4b?text=%E9%81%A0%E9%87%8E%E5%85%83',
+    imagePlaceholderColor: 'from-indigo-100 to-slate-200',
+    scenes: [
+      'https://placehold.co/320x180/e0e7ff/1e1b4b?text=scene+1',
+      'https://placehold.co/320x180/c7d2fe/312e81?text=scene+2',
+      'https://placehold.co/320x180/a5b4fc/3730a3?text=scene+3',
+    ],
+  },
+
+  // ========== 七道高校 ==========
+  {
+    id: 'tatsumi-reiha',
+    name: '巽 玲羽',
+    nameKana: 'たつみれいは',
+    grade: '1年生',
+    role: 'sub',
+    band: '七道高校',
+    part: 'ボーカル',
+    instrument: 'マイク',
+    description:
+      '七道高校のボーカリスト。幸山厘と同じ中学出身。圧倒的な歌唱力を持ち、はーとぶれいくのメンバーとも交流がある。',
+    traits: ['圧倒的な歌声', '七道高校', '幸山厘と同中'],
+    favoriteBands: ['King Gnu', 'あいみょん'],
+    imageUrl: 'https://placehold.co/400x600/fce7f3/831843?text=%E5%B7%BD+%E7%8E%B2%E7%BE%BD',
+    imagePlaceholderColor: 'from-pink-100 to-rose-200',
+    scenes: [
+      'https://placehold.co/320x180/fce7f3/831843?text=scene+1',
+      'https://placehold.co/320x180/fbcfe8/9d174d?text=scene+2',
+      'https://placehold.co/320x180/f9a8d4/be185d?text=scene+3',
+    ],
+  },
+  {
+    id: 'nikaidou-mawari',
+    name: '二楷堂まわり',
+    nameKana: 'にかいどうまわり',
+    grade: '1年生',
+    role: 'sub',
+    band: '七道高校',
+    part: 'ベース',
+    instrument: 'エレキベース',
+    description:
+      '七道高校のベーシスト。巽玲羽の友人で、遠野元とも友達関係にある。落ち着いた雰囲気を持ち、チームの安定感を担う。',
+    traits: ['落ち着いた', '七道高校', '遠野元と友達'],
+    favoriteBands: ['SHISHAMO', 'BUMP OF CHICKEN'],
+    imageUrl: 'https://placehold.co/400x600/f0f9ff/0c4a6e?text=%E4%BA%8C%E6%A5%B7%E5%A0%82',
+    imagePlaceholderColor: 'from-sky-100 to-blue-200',
+    scenes: [
+      'https://placehold.co/320x180/f0f9ff/0c4a6e?text=scene+1',
+      'https://placehold.co/320x180/e0f2fe/075985?text=scene+2',
+      'https://placehold.co/320x180/bae6fd/0369a1?text=scene+3',
+    ],
+  },
+]
+
+export const heartbreakMembers = characters.filter(c => c.band === 'はーとぶれいく')
+export const protocolMembers = characters.filter(c => c.band === 'protocol.')
+export const shichidouMembers = characters.filter(c => c.band === '七道高校')
