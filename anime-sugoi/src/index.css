@@ -633,6 +633,69 @@ body {
 }
 .modal-close:hover { background: rgba(255,255,255,0.2); }
 
+/* ===== CHARACTER DETAIL MODAL ===== */
+.char-modal-content {
+  position: relative;
+  display: flex;
+  gap: 0;
+  max-width: 680px;
+  width: 100%;
+  max-height: 90vh;
+  background: var(--bg-card);
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+.char-modal-left {
+  flex-shrink: 0;
+  width: 220px;
+}
+.char-modal-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.char-modal-right {
+  padding: 36px 36px 36px 32px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.char-modal-lab {
+  font-family: "Orbitron", monospace;
+  font-size: 0.65rem;
+  letter-spacing: 2px;
+  color: var(--theme-color, var(--cyan));
+  background: rgba(0, 229, 255, 0.08);
+  border: 1px solid rgba(0, 229, 255, 0.2);
+  border-radius: 4px;
+  padding: 4px 10px;
+  display: inline-block;
+  width: fit-content;
+  margin-bottom: 4px;
+}
+.char-modal-name {
+  font-size: 1.6rem;
+  font-weight: 900;
+  line-height: 1.2;
+  color: var(--text-primary);
+}
+.char-modal-cv {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  font-family: monospace;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+.char-modal-desc {
+  font-size: 0.88rem;
+  line-height: 1.85;
+  color: var(--text-secondary);
+  margin-top: 8px;
+}
+
 /* ===== CHARACTER CAROUSEL ===== */
 .character-section { margin-bottom: 80px; }
 .section-title {
@@ -694,6 +757,158 @@ body {
   font-size: 0.66rem;
   color: var(--text-secondary);
 }
+.char-lab-no {
+  font-family: "Orbitron", monospace;
+  font-size: 0.58rem;
+  letter-spacing: 1px;
+  color: var(--theme-color, var(--cyan));
+  margin-top: 4px;
+  opacity: 0.8;
+}
+
+/* ===== MUSIC SECTION ===== */
+.music-section { margin-bottom: 80px; }
+.music-tabs {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+.music-tab {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  padding: 14px 20px;
+  background: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: border-color 0.3s, background 0.3s;
+  text-align: left;
+  flex: 1;
+  min-width: 160px;
+}
+.music-tab:hover { border-color: rgba(0, 229, 255, 0.2); background: rgba(255,255,255,0.02); }
+.music-tab--active {
+  border-color: var(--theme-color, var(--cyan));
+  background: rgba(0, 229, 255, 0.05);
+}
+.music-tab-type {
+  font-family: "Orbitron", monospace;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--theme-color, var(--cyan));
+}
+.music-tab-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+.music-tab-artist {
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+}
+.music-player {
+  max-width: 800px;
+}
+.music-no-video {
+  padding: 40px;
+  text-align: center;
+  color: var(--text-secondary);
+  background: var(--bg-card);
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+/* mood-dark-tech: music styling */
+.mood-dark-tech .music-tab-type { color: #00C853; }
+.mood-dark-tech .music-tab--active {
+  border-color: #00C853;
+  background: rgba(0, 200, 83, 0.05);
+}
+.mood-dark-tech .char-modal-lab {
+  color: #00C853;
+  background: rgba(0, 200, 83, 0.08);
+  border-color: rgba(0, 200, 83, 0.3);
+}
+
+/* ===== FAN VIDEO SECTION ===== */
+.fan-video-section { margin-bottom: 80px; }
+.fan-video-note {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+  font-style: italic;
+}
+.fan-video-grid { display: flex; flex-direction: column; gap: 12px; }
+.fan-video-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 24px;
+  background: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.3s, background 0.3s;
+}
+.fan-video-card:hover { border-color: rgba(0, 229, 255, 0.3); background: rgba(255,255,255,0.02); }
+.fan-video-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(255, 0, 0, 0.12);
+  border: 1px solid rgba(255, 70, 70, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ff4545;
+  flex-shrink: 0;
+}
+.fan-video-info { flex: 1; min-width: 0; }
+.fan-video-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.fan-video-desc {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.fan-video-views {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 0.7rem;
+  color: var(--theme-color, var(--cyan));
+  font-family: "Orbitron", monospace;
+  letter-spacing: 1px;
+}
+.fan-video-arrow {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  flex-shrink: 0;
+  transition: transform 0.3s, color 0.3s;
+}
+.fan-video-card:hover .fan-video-arrow {
+  transform: translateX(4px);
+  color: var(--theme-color, var(--cyan));
+}
 
 /* ===== YOUTUBE ===== */
 .youtube-section { margin-bottom: 80px; }
@@ -721,6 +936,61 @@ body {
   height: 100%;
   border: none;
   transition: opacity 0.4s ease;
+}
+
+/* ===== VIDEO GALLERY ===== */
+.video-gallery-section { margin-bottom: 80px; }
+
+.vg-tabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.vg-tab {
+  padding: 8px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+}
+.vg-tab:hover {
+  border-color: var(--theme-color);
+  color: var(--text-primary);
+}
+.vg-tab--active {
+  border-color: var(--theme-color);
+  color: var(--theme-color);
+  background: color-mix(in srgb, var(--theme-color) 10%, transparent);
+}
+
+/* IDが未設定のときのプレースホルダー */
+.vg-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: var(--text-secondary);
+}
+.vg-placeholder-icon {
+  font-size: 2rem;
+  opacity: 0.3;
+}
+.vg-placeholder p {
+  font-size: 1rem;
+  font-weight: 600;
+}
+.vg-placeholder-hint {
+  font-size: 0.75rem;
+  opacity: 0.5;
+  text-align: center;
 }
 
 /* ===== LOADING / ERROR ===== */
@@ -993,6 +1263,113 @@ body {
   font-family: "Share Tech Mono", monospace;
   border-color: var(--theme-color);
   color: var(--theme-color);
+}
+
+/* --- 超かぐや姫！: サイバームーン --- */
+/* Studio Colorido の鮮やか + 月の神秘 + バーチャル配信の融合ビジュアル */
+
+/* 夜空グラデーション: ページ全体を深い宇宙色に染める */
+.mood-cyber-moon {
+  background: linear-gradient(160deg, #08091a 0%, #0d1535 45%, #1a0a30 100%);
+  min-height: 100vh;
+}
+
+/* タイトル: 月光を浴びた金色グラデーション文字 */
+.mood-cyber-moon .detail-title {
+  background: linear-gradient(135deg, #FFD700 0%, #FFB347 50%, #e46b35 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 20px rgba(255, 200, 50, 0.5));
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+/* サブタイトル: 星空の色（淡い青紫） */
+.mood-cyber-moon .detail-romaji {
+  color: #a8b4d8;
+  letter-spacing: 5px;
+  font-style: italic;
+}
+
+/* スコア: 月光ゴールド */
+.mood-cyber-moon .detail-score {
+  color: #FFD700;
+  text-shadow: 0 0 16px rgba(255, 215, 0, 0.6);
+}
+
+/* 統計値: オレンジ輝き */
+.mood-cyber-moon .stat-value {
+  color: #e46b35;
+  text-shadow: 0 0 8px rgba(228, 107, 53, 0.4);
+}
+.mood-cyber-moon .stat-label {
+  color: #a8b4d8;
+  opacity: 0.8;
+}
+
+/* ジャンルタグ: 紫のネオングロー */
+.mood-cyber-moon .genre-tag {
+  border-color: #8855ff;
+  color: #b69dff;
+  background: rgba(136, 85, 255, 0.12);
+  box-shadow: 0 0 8px rgba(136, 85, 255, 0.2);
+}
+
+/* ポスター: 月輪ハロー効果 */
+.mood-cyber-moon .poster-wrapper {
+  box-shadow:
+    0 0 25px rgba(255, 215, 0, 0.25),
+    0 0 70px rgba(136, 85, 255, 0.15),
+    inset 0 0 20px rgba(228, 107, 53, 0.05);
+}
+.mood-cyber-moon .poster-wrapper:hover {
+  box-shadow:
+    0 0 40px rgba(255, 215, 0, 0.4),
+    0 0 100px rgba(136, 85, 255, 0.2),
+    inset 0 0 30px rgba(228, 107, 53, 0.08);
+}
+
+/* セクションタイトル: オレンジグロー */
+.mood-cyber-moon .section-title {
+  color: #e46b35;
+  text-shadow: 0 0 10px rgba(228, 107, 53, 0.4);
+}
+.mood-cyber-moon .section-title::before {
+  background: linear-gradient(90deg, #e46b35, #8855ff);
+  height: 2px;
+}
+
+/* 説明文: 読みやすい明るさを保ちつつ宇宙トーンで */
+.mood-cyber-moon .detail-description {
+  color: rgba(200, 215, 240, 0.85);
+  line-height: 2;
+}
+
+/* 戻るボタン */
+.mood-cyber-moon .back-button {
+  border-color: #8855ff;
+  color: #b69dff;
+}
+.mood-cyber-moon .back-button:hover {
+  background: rgba(136, 85, 255, 0.15);
+  border-color: #FFD700;
+  color: #FFD700;
+}
+
+/* ミュージックタブ */
+.mood-cyber-moon .music-tab-type { color: #e46b35; }
+.mood-cyber-moon .music-tab--active {
+  border-color: #e46b35;
+  color: #FFD700;
+  background: rgba(228, 107, 53, 0.1);
+}
+
+/* キャラクターラボメンバッジ（今作では未使用だが念のため） */
+.mood-cyber-moon .char-lab-no {
+  color: #FFD700;
+  font-size: 0.7rem;
+  opacity: 0.8;
 }
 
 /* ===== HOME PAGE ===== */

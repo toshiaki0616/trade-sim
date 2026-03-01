@@ -18,7 +18,10 @@
       "Bash(gh repo create:*)",
       "Bash(git remote add:*)",
       "Bash(git push:*)",
-      "Bash(# Check @tsparticles/react API to understand the correct types ls /c/work/claude/anime-sugoi/node_modules/@tsparticles/react/ && cat /c/work/claude/anime-sugoi/node_modules/@tsparticles/react/dist/index.d.ts)"
+      "Bash(# Check @tsparticles/react API to understand the correct types ls /c/work/claude/anime-sugoi/node_modules/@tsparticles/react/ && cat /c/work/claude/anime-sugoi/node_modules/@tsparticles/react/dist/index.d.ts)",
+      "Bash(python -c \":*)",
+      "Bash(python smart_organizer.py --help)",
+      "Read(//c/work/新しいフォルダー//**)"
     ]
   }
 }

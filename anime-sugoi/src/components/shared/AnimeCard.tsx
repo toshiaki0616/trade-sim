@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import type { AnimeData } from "../../data/sampleAnime";
 import { useMagneticHover } from "../../hooks/useMagneticHover";
+import { GENRE_JA } from "../../lib/labels";
 
 interface Props {
   anime: AnimeData;
@@ -64,8 +65,8 @@ export default function AnimeCard({ anime, index }: Props) {
             <span className="card-year">{anime.seasonYear}</span>
           </div>
           <div className="card-genres">
-            {anime.genres.slice(0, 2).map((g) => (
-              <span key={g} className="genre-tag">{g}</span>
+            {(anime.genres ?? []).slice(0, 2).map((g) => (
+              <span key={g} className="genre-tag">{GENRE_JA[g] ?? g}</span>
             ))}
           </div>
         </div>
