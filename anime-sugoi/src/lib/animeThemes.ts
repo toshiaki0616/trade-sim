@@ -50,6 +50,30 @@ export const animeThemes: Record<number, AnimeTheme> = {
       },
     },
   },
+  // 超かぐや姫！: 星降る月夜のサイバーポップ
+  201903: {
+    themeColor: "#e46b35",
+    accentColor: "#8855ff",
+    mood: "cyber-moon",
+    glitchEnabled: false,
+    particleConfig: {
+      particles: {
+        // 夜空を流れる星のイメージ: 小さく多く、ゆっくり漂う
+        number: { value: 140 },
+        color: { value: ["#FFD700", "#ffffff", "#8855ff", "#e46b35", "#b69dff"] },
+        shape: { type: "circle" },
+        size: { value: { min: 0.5, max: 2.5 } },
+        move: {
+          enable: true,
+          speed: 0.4,
+          direction: "none",
+          random: true,
+          outModes: { default: "out" },
+        },
+        opacity: { value: { min: 0.15, max: 0.85 } },
+      },
+    },
+  },
 };
 
 export function getTheme(id: number): AnimeTheme | null {

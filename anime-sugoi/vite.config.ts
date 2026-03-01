@@ -3,6 +3,16 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
+  server: {
+    proxy: {
+      // AniList GraphQL API の CORS を回避するため開発サーバー経由でプロキシ
+      "/api/anilist": {
+        target: "https://graphql.anilist.co",
+        changeOrigin: true,
+        rewrite: () => "/",
+      },
+    },
+  },
   build: {
     rollupOptions: {
       output: {

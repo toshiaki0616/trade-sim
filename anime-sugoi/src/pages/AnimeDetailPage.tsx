@@ -8,10 +8,14 @@ import { useLenis } from "../hooks/useLenis";
 import PosterSection from "../components/detail/PosterSection";
 import CharacterCarousel from "../components/detail/CharacterCarousel";
 import YouTubeEmbed from "../components/detail/YouTubeEmbed";
+import MusicSection from "../components/detail/MusicSection";
+import FanVideoSection from "../components/detail/FanVideoSection";
+import VideoGallery from "../components/detail/VideoGallery";
 import GlitchEffect from "../components/detail/GlitchEffect";
 import ParticleBackground from "../components/shared/ParticleBackground";
 import PageTransition from "../components/layout/PageTransition";
 import { getTheme } from "../lib/animeThemes";
+import { STATUS_JA, SEASON_JA, GENRE_JA } from "../lib/labels";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -103,7 +107,7 @@ export default function AnimeDetailPage() {
               >
                 <div className="detail-meta-top">
                   <span className="detail-score">{anime.averageScore ?? "—"}</span>
-                  <span className="detail-status">{anime.status}</span>
+                  <span className="detail-status">{STATUS_JA[anime.status] ?? anime.status}</span>
                 </div>
                 <h1 className="detail-title">{anime.title.native}</h1>
                 <p className="detail-romaji">{anime.title.romaji}</p>
@@ -114,16 +118,16 @@ export default function AnimeDetailPage() {
                   </div>
                   <div className="stat">
                     <span className="stat-label">放送</span>
-                    <span className="stat-value">{anime.season} {anime.seasonYear}</span>
+                    <span className="stat-value">{SEASON_JA[anime.season] ?? anime.season}{anime.seasonYear}</span>
                   </div>
                   <div className="stat">
                     <span className="stat-label">スタジオ</span>
-                    <span className="stat-value">{anime.studios.nodes[0]?.name ?? "—"}</span>
+                    <span className="stat-value">{anime.studios.nodes?.[0]?.name ?? "—"}</span>
                   </div>
                 </div>
                 <div className="detail-genres">
-                  {anime.genres.map((g) => (
-                    <span key={g} className="genre-tag">{g}</span>
+                  {(anime.genres ?? []).map((g) => (
+                    <span key={g} className="genre-tag">{GENRE_JA[g] ?? g}</span>
                   ))}
                 </div>
                 <p className="detail-description">{anime.description}</p>
@@ -132,7 +136,10 @@ export default function AnimeDetailPage() {
           </div>
 
           <CharacterCarousel anime={anime} />
+          <MusicSection anime={anime} />
           <YouTubeEmbed anime={anime} />
+          <VideoGallery anime={anime} />
+          <FanVideoSection anime={anime} />
         </div>
       </div>
     </PageTransition>

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import type { AnimeData } from "../data/sampleAnime";
 import { fetchAnimeList, fetchAnimeById } from "../lib/anilist";
 
-const ANIME_IDS = [227, 9253, 2104, 16664, 2321];
+const ANIME_IDS = [227, 9253, 2104, 16664, 2321, 201903];
 
 export function useAnimeList() {
   const [data, setData] = useState<AnimeData[]>([]);

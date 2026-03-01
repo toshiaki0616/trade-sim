@@ -1,7 +1,9 @@
 import type { AnimeData } from "../data/sampleAnime";
 import { sampleAnimeList } from "../data/sampleAnime";
 
-const ANILIST_API = "https://graphql.anilist.co";
+// 開発時は Vite proxy 経由で CORS 回避、本番は直接リクエスト
+const ANILIST_API =
+  import.meta.env.DEV ? "/api/anilist" : "https://graphql.anilist.co";
 
 // セッション中のインメモリキャッシュ（API レート制限・重複フェッチ防止）
 const cache = new Map<number, AnimeData>();
@@ -78,8 +80,25 @@ export async function fetchAnimeById(id: number): Promise<AnimeData | null> {
     const json = await res.json();
     const media = json.data?.Media;
     if (!media) throw new Error("No data");
-    const result: AnimeData = {
+    // API が null を返しうるフィールドを空配列・空文字にノーマライズ
+    const normalizedMedia = {
       ...media,
+      genres: media.genres ?? [],
+      studios: { nodes: media.studios?.nodes ?? [] },
+      characters: {
+        nodes: (media.characters?.nodes ?? []).map((node: AnimeData["characters"]["nodes"][number]) => {
+          // sampleAnime のキャラクター説明・ラボメン番号を API データにマージ
+          const sampleChar = sample?.characters.nodes.find((c) => c.id === node.id);
+          return sampleChar
+            ? { ...node, description: sampleChar.description, labMemberNo: sampleChar.labMemberNo }
+            : node;
+        }),
+        edges: media.characters?.edges ?? [],
+      },
+    };
+
+    const result: AnimeData = {
+      ...normalizedMedia,
       themeColor: sample?.themeColor ?? media.coverImage?.color ?? "#00e5ff",
       accentColor: sample?.accentColor ?? "#ff2d78",
       mood: sample?.mood ?? "default",
@@ -87,6 +106,9 @@ export async function fetchAnimeById(id: number): Promise<AnimeData | null> {
       youtubeTrailerId:
         sample?.youtubeTrailerId ??
         (media.trailer?.site === "youtube" ? media.trailer.id : undefined),
+      // sampleAnime にしか存在しないフィールドを引き継ぐ
+      music: sample?.music,
+      fanVideos: sample?.fanVideos,
     };
     cache.set(id, result);
     return result;
