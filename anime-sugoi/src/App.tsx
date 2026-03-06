@@ -8,6 +8,7 @@ import ErrorBoundary from "./components/shared/ErrorBoundary";
 import HomePage from "./pages/HomePage";
 
 const AnimeDetailPage = lazy(() => import("./pages/AnimeDetailPage"));
+const CssShowcasePage = lazy(() => import("./pages/CssShowcasePage"));
 const NotFoundPage = lazy(() => import("./pages/NotFoundPage"));
 
 function AnimatedRoutes() {
@@ -21,6 +22,14 @@ function AnimatedRoutes() {
           element={
             <Suspense fallback={<div className="detail-loading"><div className="loading-spinner" /></div>}>
               <AnimeDetailPage />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/css-showcase"
+          element={
+            <Suspense fallback={null}>
+              <CssShowcasePage />
             </Suspense>
           }
         />

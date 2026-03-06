@@ -6,7 +6,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useAnimeDetail } from "../hooks/useAnimeData";
 import { useLenis } from "../hooks/useLenis";
 import PosterSection from "../components/detail/PosterSection";
-import CharacterCarousel from "../components/detail/CharacterCarousel";
+import CharacterShowcase from "../components/detail/CharacterShowcase";
+import CharacterGrid from "../components/detail/CharacterGrid";
 import YouTubeEmbed from "../components/detail/YouTubeEmbed";
 import MusicSection from "../components/detail/MusicSection";
 import FanVideoSection from "../components/detail/FanVideoSection";
@@ -20,7 +21,7 @@ import { STATUS_JA, SEASON_JA, GENRE_JA } from "../lib/labels";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function AnimeDetailPage() {
-  useLenis();
+  const lenisRef = useLenis();
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const animeId = parseInt(id ?? "0", 10);
@@ -135,7 +136,11 @@ export default function AnimeDetailPage() {
             </div>
           </div>
 
-          <CharacterCarousel anime={anime} />
+          {/* 超かぐや姫（201903）はグリッド表示、他は PREV/NEXT ショーケース */}
+          {anime.id === 201903
+            ? <CharacterGrid anime={anime} />
+            : <CharacterShowcase anime={anime} />
+          }
           <MusicSection anime={anime} />
           <YouTubeEmbed anime={anime} />
           <VideoGallery anime={anime} />

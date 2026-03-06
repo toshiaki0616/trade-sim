@@ -1,12 +1,15 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import Lenis from "lenis";
 
-export function useLenis() {
+export function useLenis(): React.RefObject<Lenis | null> {
+  const lenisRef = useRef<Lenis | null>(null);
+
   useEffect(() => {
     const lenis = new Lenis({
       duration: 1.2,
       easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
     });
+    lenisRef.current = lenis;
 
     function raf(time: number) {
       lenis.raf(time);
@@ -16,6 +19,9 @@ export function useLenis() {
 
     return () => {
       lenis.destroy();
+      lenisRef.current = null;
     };
   }, []);
+
+  return lenisRef;
 }

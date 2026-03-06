@@ -6,7 +6,8 @@
       "Bash(gh api repos/toshiaki0616/anime-schedule/contents/src/hooks/useWatchList.ts --jq '.content')",
       "Bash(gh api repos/toshiaki0616/anime-schedule/contents/index.html --jq '.content')",
       "Bash(gh api repos/toshiaki0616/anime-schedule/contents/vite.config.ts --jq '.content')",
-      "Bash(gh api repos/toshiaki0616/anime-schedule/contents/src/pages/SchedulePage.tsx --jq '.content')"
+      "Bash(gh api repos/toshiaki0616/anime-schedule/contents/src/pages/SchedulePage.tsx --jq '.content')",
+      "Bash(python:*)"
     ]
   }
 }
